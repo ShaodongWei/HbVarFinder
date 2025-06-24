@@ -1,6 +1,3 @@
-# This script is generate the peptide to variants mapping file. You can re-run this script to 
-# generate a more up-to-date data. 
-
 import pandas as pd
 from joblib import Parallel, delayed
 from Bio import SeqIO
@@ -193,8 +190,8 @@ if __name__ == "__main__":
     # required arguments
     parser.add_argument('--missed_cleavage', required=True, type=int, choices=[0,1], help="Aollowed missed cleavage with trypsin, higher value leads to more unique peptides.")
     parser.add_argument('--output_dir', required=True, help="Output directory, where mapping file will be generated.")
-    parser.add_argument("--threads", required=10, type=int, help="Number of threads.")
+    parser.add_argument("--threads", required=True, type=int, help="Number of threads.")
     args = parser.parse_args()
     if not os.path.isdir(args.output_dir):
         os.makedirs(args.output_dir, exist_ok=True)    
-    generating(missed_cleavages=args.missed_cleavage, output_dir=args.output_dir)
+    generating(missed_cleavages=args.missed_cleavage, output_dir=args.output_dir, n_jobs=args.n_jobs)

@@ -21,6 +21,7 @@ pip install -r ./script/packages.txt
 ## Before use 
 Before using, it is recommended to re-run the generating_mapping.py script to re-generate the variants table, so that the table is up to date. The varaints information 
 is obtained from the [IthaNet](https://www.ithanet.eu/db/ithagenes?action=list&hcat=0b-)
+
 ```
 
 ```

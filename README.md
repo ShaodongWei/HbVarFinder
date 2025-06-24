@@ -13,7 +13,7 @@ python -m venv hbvarfinder
 source ./hbvarfinder/bin/activate  # linux
 source hbvarfinder/Scripts/activate #windows 
 pip install --upgrade pip  
-pip install -r ./script/packages.txt
+pip install -r ./scripts/packages.txt
 ```
 
 # How to use
@@ -23,5 +23,7 @@ Before using, it is recommended to re-run the generating_mapping.py script to re
 is obtained from the [IthaNet](https://www.ithanet.eu/db/ithagenes?action=list&hcat=0b-)
 
 ```
+python ./scripts/generating_mapping.py -h
+python ./scripts/generating_mapping.py -
 
 ```

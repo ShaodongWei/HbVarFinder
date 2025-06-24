@@ -1,7 +1,7 @@
 # HbVarFinder
 
 # When to use 
-This script is to help quickly find hemoglobin structural variants based on tryptic proteomics. So far the tool only support one point mutation (n=890).
+This script is to help quickly find hemoglobin structural variants based on tryptic proteomics.
 
 # Before use 
 Before using, it is recommended to re-run the generating_mapping.py script to re-generate the variants table, so that the table is up to date. The varaints information 

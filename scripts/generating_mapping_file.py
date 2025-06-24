@@ -35,7 +35,6 @@ def gene_to_refseq(gene_symbol):
 
 # this function is to retriev information from mutalyzer based on hgvs names
 def query_mutalyzer(hgvs):
-    hgvs = 'NM_000517.6:c.398dup'
     url = f"https://mutalyzer.nl/api/normalize/{hgvs}"
     try:
         response = requests.get(url)

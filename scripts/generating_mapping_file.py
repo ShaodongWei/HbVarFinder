@@ -116,7 +116,7 @@ def generating(missed_cleavages, output_dir, n_jobs):
     mutalyzer_results = Parallel(n_jobs=n_jobs)(
         delayed(query_mutalyzer)(x) for x in tqdm(df['hgvs'])
     )
-    df['mutalyzer'] = mutalyzer_results
+    df.loc['mutalyzer'] = mutalyzer_results
 
     # # save a temporary file
     # import pickle
@@ -130,7 +130,7 @@ def generating(missed_cleavages, output_dir, n_jobs):
 
     # filter out non-single point mutation 
     mask = df['mutalyzer'].apply(lambda x: x['mutation_type'] == 1 if pd.notna(x) else False)
-    df = df.loc[mask,:]
+    df = df.loc[mask,:].copy()
     
     # ------------------------------------------------------------
     # Step 4: Identify Unique Tryptic Peptides

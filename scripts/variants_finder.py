@@ -9,7 +9,7 @@ def mapping():
     parser.add_argument('--index_column', required=True, help='The index column in peptide_table. It should be peptide amino acids.')
     parser.add_argument('--mapping_file', required=True, help="Path to mapping file (csv).")
     parser.add_argument('--output_dir', required=True, help="Output directory where final mapped variants will be located.")
-    parser.add_argument('--variant_min_level', required=True, default=0, type=float, help="The minimal abundance level for variants considered to be present")
+    parser.add_argument('--variant_min_level', default=0, type=float, help="The minimal abundance level for variants considered to be present")
     args = parser.parse_args()
     
     # read in mapping file 

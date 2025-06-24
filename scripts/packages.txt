@@ -1,0 +1,8 @@
+pandas
+joblib
+biopython
+tqdm
+pyteomics
+requests
+mygene
+lxml

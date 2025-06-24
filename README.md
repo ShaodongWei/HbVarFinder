@@ -26,7 +26,7 @@ python ./scripts/generating_mapping_file.py --missed_cleavage 0 --output_dir out
 ```
 
 ## Find variant peptides in samples 
-Now we have a ready-to-use mapping file, then we identify variants in our samples
+Now we have a ready-to-use mapping file, next we identify variants in our samples
 ```
-python ./scripts/variants_finder.py --peptide_table data_in/peptide_table.csv --index_column peptide --mapping_file output/mapping.csv --output_dir output
+python ./scripts/variants_finder.py --peptide_table data_in/peptide_table.csv --index_column peptide --mapping_file output/mapping.csv --output_dir output --variant_min_level 0 
 ```

@@ -18,12 +18,18 @@ pip install -r ./scripts/packages.txt
 
 # How to use
 
-## Before use 
+## Preparing mapping file 
 Before using, it is recommended to re-run the generating_mapping.py script to re-generate the variants table, so that the table is up to date. The varaints information 
 is obtained from the [IthaNet](https://www.ithanet.eu/db/ithagenes?action=list&hcat=0b-)
 
 ```
 python ./scripts/generating_mapping_file.py -h
-python ./scripts/generating_mapping_file.py -
+python ./scripts/generating_mapping_file.py --missed_cleavage 0 --output_dir output --threads 10
+
+```
+
+## Find variant peptides in samples 
+Now we have a ready-to-use mapping file, then we identify variants in our samples
+```
 
 ```

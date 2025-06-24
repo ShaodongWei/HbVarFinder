@@ -113,10 +113,10 @@ def generating(missed_cleavages, output_dir, n_jobs):
     # Step 3: Query Mutalyzer for Protein Consequences (slow to run, ~ 20 min)
     # ------------------------------------------------------------
 
-    # mutalyzer_results = Parallel(n_jobs=n_jobs)(
-    #     delayed(query_mutalyzer)(x) for x in tqdm(df['hgvs'])
-    # )
-    # df['mutalyzer'] = mutalyzer_results
+    mutalyzer_results = Parallel(n_jobs=n_jobs)(
+        delayed(query_mutalyzer)(x) for x in tqdm(df['hgvs'])
+    )
+    df['mutalyzer'] = mutalyzer_results
 
     # # save a temporary file
     # import pickle
@@ -124,9 +124,9 @@ def generating(missed_cleavages, output_dir, n_jobs):
     # with open(file, 'wb') as f:
     #     pickle.dump(df, f)
 
-    file = 'step3.pkl'
-    with open(file, 'rb') as f:
-        df = pickle.load(f)
+    # file = 'step3.pkl'
+    # with open(file, 'rb') as f:
+    #     df = pickle.load(f)
 
     # filter out non-single point mutation 
     mask = df['mutalyzer'].apply(lambda x: x['mutation_type'] == 1 if pd.notna(x) else False)

@@ -194,4 +194,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if not os.path.isdir(args.output_dir):
         os.makedirs(args.output_dir, exist_ok=True)    
-    generating(missed_cleavages=args.missed_cleavage, output_dir=args.output_dir, n_jobs=args.n_jobs)
+    generating(missed_cleavages=args.missed_cleavage, output_dir=args.output_dir, n_jobs=args.threads)

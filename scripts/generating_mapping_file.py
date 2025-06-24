@@ -116,7 +116,7 @@ def generating(missed_cleavages, output_dir, n_jobs):
     mutalyzer_results = Parallel(n_jobs=n_jobs)(
         delayed(query_mutalyzer)(x) for x in tqdm(df['hgvs'])
     )
-    df.loc['mutalyzer'] = mutalyzer_results
+    df['mutalyzer'] = mutalyzer_results
 
     # # save a temporary file
     # import pickle

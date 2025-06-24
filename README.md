@@ -16,7 +16,7 @@ pip install -r ./scripts/packages.txt
 # How to use
 
 ## Prepare mapping file 
-Before using, it is recommended to re-run the generating_mapping.py script to re-generate the variants table, so that the table is up to date. The varaints information 
+Before using, it is recommended to re-run the generating_mapping_file.py script to re-generate the variants table, so that the table is up to date. The varaints information 
 is obtained from the [IthaNet](https://www.ithanet.eu/db/ithagenes?action=list&hcat=0b-)
 
 ```

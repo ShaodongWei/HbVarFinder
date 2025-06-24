@@ -1,7 +1,8 @@
 # HbVarFinder
 
 # When to use 
-This script is to help quickly find hemoglobin structural variants based on tryptic proteomics.
+This script is to help quickly find hemoglobin structural variants based on tryptic proteomics. The var_finder.py script reports the existence of variants if larger than zero abundance of variant-specific peptides are detected in samples. 
+
 
 # Install packages 
 ```

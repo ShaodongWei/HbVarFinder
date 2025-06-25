@@ -8,7 +8,7 @@ This script is to help quickly find hemoglobin structural variants based on tryp
 ```
 python -m venv hbvarfinder  
 source ./hbvarfinder/bin/activate  # linux
-source hbvarfinder/Scripts/activate #windows 
+source hbvarfinder/Scripts/activate # windows 
 pip install --upgrade pip  
 pip install -r ./scripts/packages.txt
 ```
@@ -17,7 +17,7 @@ pip install -r ./scripts/packages.txt
 
 ## Prepare mapping file 
 Before using, it is recommended to re-run the generating_mapping_file.py script to re-generate the variants table, so that the table is up to date (takes ~ 20 min). The varaints information 
-is obtained from the [IthaNet](https://www.ithanet.eu/db/ithagenes?action=list&hcat=0b-)
+is obtained from the [IthaNet](https://www.ithanet.eu/db/ithagenes?action=list&hcat=0b-) and [Mutalyzer](https://mutalyzer.nl/)
 
 ```
 python ./scripts/generating_mapping_file.py -h

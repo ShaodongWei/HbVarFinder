@@ -20,20 +20,23 @@ def mapping():
     
     # find varaints peptides in sampes 
     def var_finder(df):
-        # samples in columns, index is the peptides sequence in each sample
-        result = []
-        for sample_name in df.columns:
-            sample = df[sample_name].dropna()
-            if args.variant_min_level == 0:
-                sample_pep_pool = list(set(sample.index[sample > 0]))
-            else:
-                sample_pep_pool = list(set(sample.index[sample >= args.variant_min_level]))
-            sample_pep_pool = list(set(sample.index[sample > args.variant_min_level]))
+    # samples in columns, index is the peptides sequence in each sample
+    result = []
+    for sample_name in df.columns:
+        sample = df[sample_name].dropna()
+        if variant_min_level == 0:
+            sample_pep_pool = list(set(sample.index[sample > 0]))
+        else:
+            sample_pep_pool = list(set(sample.index[sample >= variant_min_level]))
+        try:    
             tmp = mapping[mapping['uniq_human'].isin(sample_pep_pool)].copy()
             tmp['Sample'] = sample_name
-            tmp.columns = ['Hb Name', 'Peptides', 'Sample']
+            tmp = tmp.rename(columns={'uniq_human': 'Peptides'})
+            tmp = tmp[['Hb Name', 'Peptides', 'Sample']].copy()
             result.append(tmp)
-        return pd.concat(result, axis=0)
+        except:
+            continue
+    return pd.concat(result, axis=0)
 
     # save data 
     if not os.path.isdir(args.output_dir):

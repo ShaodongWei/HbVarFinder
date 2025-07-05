@@ -15,9 +15,6 @@ def mapping():
     # read in mapping file 
     mapping = pd.read_csv(args.mapping_file)
 
-    os.listdir(os.getcwd())
-    mapping = pd.read_csv('./output/mapping.csv')
-
     # read in peptide table 
     dat = pd.read_csv(args.peptide_table, index_col=args.index_column)
     
